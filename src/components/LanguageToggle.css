@@ -1,0 +1,35 @@
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+}
+
+.lang-toggle__btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  padding: 0.15rem 0.2rem;
+  transition: color var(--transition);
+  font-family: var(--font-body);
+}
+
+.lang-toggle__btn:hover {
+  color: var(--text-primary);
+}
+
+.lang-toggle__btn--active {
+  color: var(--green-primary);
+}
+
+.lang-toggle__sep {
+  color: var(--border);
+  font-size: 0.7rem;
+}

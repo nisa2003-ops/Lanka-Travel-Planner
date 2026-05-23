@@ -1,0 +1,120 @@
+import { createContext, useContext, useState } from 'react';
+
+const translations = {
+  en: {
+    nav_home: 'Home',
+    nav_planner: 'Plan Trip',
+    nav_about: 'About',
+    hero_tag: 'AI-Powered Travel Guide',
+    hero_title: 'Discover the\nPearl of the Indian Ocean',
+    hero_sub: 'From misty highlands to golden shores — let AI craft your perfect Sri Lankan adventure',
+    hero_cta: 'Start Planning',
+    hero_scroll: 'Scroll to explore',
+    form_city: 'Starting City',
+    form_city_placeholder: 'Select city...',
+    form_days: 'Duration',
+    form_days_unit: 'days',
+    form_interests: 'Your Interests',
+    form_budget: 'Budget Style',
+    form_month: 'Travel Month',
+    form_party: 'Party Size',
+    form_currency: 'Currency',
+    form_language: 'Itinerary Language',
+    form_generate: 'Generate My Itinerary',
+    form_error_city: 'Please select a starting city.',
+    form_error_interest: 'Pick at least one interest.',
+    loading_title: 'Crafting your journey...',
+    loading_sub: 'Consulting ancient routes & hidden gems',
+    result_tag: 'Your Itinerary',
+    result_cost: 'Est. Cost',
+    result_duration: 'Duration',
+    result_starting: 'Starting',
+    result_highlights: '✦ Trip Highlights',
+    result_morning: 'Morning',
+    result_afternoon: 'Afternoon',
+    result_evening: 'Evening',
+    result_food: 'Food Tip',
+    result_stay: 'Stay',
+    result_packing: '🎒 Packing Tips',
+    result_cultural: '🙏 Cultural Notes',
+    result_back: '← Plan Another Trip',
+    budget_title: '💰 Budget Breakdown',
+    budget_food: 'Food',
+    budget_transport: 'Transport',
+    budget_accommodation: 'Accommodation',
+    budget_activities: 'Activities',
+    budget_total: 'Total Est. Cost',
+    budget_per_day: 'per day/person',
+    map_title: '🗺️ Your Route',
+    map_day: 'Day',
+    rec_title: '🍛 Recommendations',
+    rec_hotels: 'Where to Stay',
+    rec_food: 'Must Try Food',
+  },
+  si: {
+    nav_home: 'මුල් පිටුව',
+    nav_planner: 'සංචාරය සැලසුම් කරන්න',
+    nav_about: 'ගැන',
+    hero_tag: 'AI-ශක්තිමත් සංචාර මාර්ගෝපදේශය',
+    hero_title: 'ඉන්දියන් සාගරයේ\nමුතු රැගෙන යන්න',
+    hero_sub: '霧ය කඳු සිට රන් වෙරළ දක්වා — AI ඔබේ ශ්‍රී ලංකා සංචාරය සැලසුම් කරයි',
+    hero_cta: 'සැලසුම් ආරම්භ කරන්න',
+    hero_scroll: 'ගවේෂණය කිරීමට අනුචලනය කරන්න',
+    form_city: 'ආරම්භක නගරය',
+    form_city_placeholder: 'නගරය තෝරන්න...',
+    form_days: 'කාලය',
+    form_days_unit: 'දින',
+    form_interests: 'ඔබගේ රුචිකත්වයන්',
+    form_budget: 'අයවැය රටාව',
+    form_month: 'සංචාර මාසය',
+    form_party: 'පාර්ශ්වයේ ප්‍රමාණය',
+    form_currency: 'මුදල් වර්ගය',
+    form_language: 'සංචාර භාෂාව',
+    form_generate: 'මගේ සංචාර සැලැස්ම සාදන්න',
+    form_error_city: 'කරුණාකර ආරම්භක නගරය තෝරන්න.',
+    form_error_interest: 'අවම වශයෙන් එක් රුචිකත්වයක් තෝරන්න.',
+    loading_title: 'ඔබේ ගමන සකස් කරමින්...',
+    loading_sub: 'පුරාණ මාර්ග සොයමින්',
+    result_tag: 'ඔබේ සංචාර සැලැස්ම',
+    result_cost: 'ඇස්. පිරිවැය',
+    result_duration: 'කාලය',
+    result_starting: 'ආරම්භය',
+    result_highlights: '✦ සංචාර විශේෂාංග',
+    result_morning: 'උදෑසන',
+    result_afternoon: 'දහවල්',
+    result_evening: 'සවස',
+    result_food: 'ආහාර ඉඟිය',
+    result_stay: 'නවාතැන',
+    result_back: '← තවත් සංචාරයක් සැලසුම් කරන්න',
+    result_packing: '🎒 ඇසුරුම් ඉඟි',
+    result_cultural: '🙏 සාංස්කෘතික සටහන්',
+    budget_title: '💰 අයවැය විස්තරය',
+    budget_food: 'ආහාර',
+    budget_transport: 'ප්‍රවාහනය',
+    budget_accommodation: 'නවාතැන',
+    budget_activities: 'ක්‍රියාකාරකම්',
+    budget_total: 'මුළු ඇස්. පිරිවැය',
+    budget_per_day: 'දිනකට/පුද්ගලයෙකුට',
+    map_title: '🗺️ ඔබේ මාර්ගය',
+    map_day: 'දිනය',
+    rec_title: '🍛 නිර්දේශ',
+    rec_hotels: 'නවාතැන ගැනීමට',
+    rec_food: 'රස විඳිය යුතු ආහාර',
+  }
+};
+
+const LanguageContext = createContext();
+
+export function LanguageProvider({ children }) {
+  const [lang, setLang] = useState('en');
+  const t = (key) => translations[lang][key] || key;
+  return (
+    <LanguageContext.Provider value={{ lang, setLang, t }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+}
+
+export function useLang() {
+  return useContext(LanguageContext);
+}

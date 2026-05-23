@@ -1,0 +1,197 @@
+.trip-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.trip-form__card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+}
+
+.trip-form__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.trip-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.trip-form__value {
+  color: var(--green-primary);
+  font-weight: 500;
+}
+
+.trip-form__select {
+  margin-top: 0.25rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.trip-form__select:focus {
+  border-color: var(--green-primary);
+}
+
+.trip-form__select option {
+  background: #0d1810;
+  color: var(--text-primary);
+}
+
+.trip-form__range {
+  width: 100%;
+  accent-color: var(--green-primary);
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.trip-form__range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+/* Interests grid */
+.trip-form__interests {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.trip-form__interest {
+  padding: 0.65rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.trip-form__interest:hover {
+  border-color: var(--green-muted);
+  color: var(--text-secondary);
+}
+
+.trip-form__interest--active {
+  border-color: var(--green-primary) !important;
+  background: rgba(74,222,128,0.08) !important;
+  color: var(--green-primary) !important;
+}
+
+/* Budget */
+.trip-form__budget {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.trip-form__budget-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.02);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  transition: all var(--transition);
+}
+
+.trip-form__budget-btn:hover {
+  border-color: var(--gold-muted);
+  color: var(--text-secondary);
+}
+
+.trip-form__budget-btn--active {
+  border-color: var(--gold) !important;
+  background: rgba(251,191,36,0.08) !important;
+  color: var(--gold) !important;
+}
+
+/* Currency chips */
+.trip-form__chips {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.trip-form__chip {
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  transition: all var(--transition);
+}
+
+.trip-form__chip:hover {
+  color: var(--text-primary);
+}
+
+.trip-form__chip--active-gold {
+  border-color: var(--gold);
+  background: rgba(251,191,36,0.1);
+  color: var(--gold);
+}
+
+/* Error */
+.trip-form__error {
+  color: #f87171;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Submit */
+.trip-form__submit {
+  padding: 1rem 2rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--green-dark), var(--green-primary));
+  color: #060e08;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.trip-form__submit:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.trip-form__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .trip-form__interests {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .trip-form__budget {
+    flex-direction: column;
+  }
+}

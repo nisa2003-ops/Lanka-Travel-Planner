@@ -1,0 +1,143 @@
+.recs {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.recs__section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.recs__subtitle {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+/* Hotels */
+.recs__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.recs__hotel-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: border-color var(--transition);
+}
+
+.recs__hotel-card:hover {
+  border-color: var(--border-accent);
+}
+
+.recs__hotel-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.recs__hotel-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.recs__tier {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.recs__tier--budget {
+  background: rgba(74,222,128,0.1);
+  color: var(--green-primary);
+  border: 1px solid rgba(74,222,128,0.2);
+}
+
+.recs__tier--midrange {
+  background: rgba(251,191,36,0.1);
+  color: var(--gold);
+  border: 1px solid rgba(251,191,36,0.2);
+}
+
+.recs__tier--luxury {
+  background: rgba(167,139,250,0.1);
+  color: var(--lavender);
+  border: 1px solid rgba(167,139,250,0.2);
+}
+
+.recs__hotel-city {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.recs__hotel-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Food */
+.recs__food-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.recs__food-item {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+
+.recs__food-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.3rem;
+}
+
+.recs__food-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.recs__veg {
+  font-size: 0.65rem;
+  color: var(--green-primary);
+  background: rgba(74,222,128,0.08);
+  border: 1px solid rgba(74,222,128,0.2);
+  border-radius: 10px;
+  padding: 0.15rem 0.5rem;
+}
+
+.recs__food-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}

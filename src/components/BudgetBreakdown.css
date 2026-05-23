@@ -1,0 +1,78 @@
+.budget {
+  padding: 1.5rem;
+}
+
+.budget__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin-top: 1.25rem;
+}
+
+.budget__bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.budget__bar-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.budget__bar-amount {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.budget__bar-amount small {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin-left: 0.25rem;
+}
+
+.budget__bar-track {
+  height: 6px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.budget__bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease;
+  opacity: 0.85;
+}
+
+.budget__total {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.budget__total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.budget__total-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--green-primary);
+  font-weight: 400;
+}
+
+.budget__total-daily {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
