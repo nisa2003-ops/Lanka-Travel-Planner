@@ -184,11 +184,4 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ---
 
-## 👨‍💻 Author
-
-**Nisadu** — CS Special Degree Student, University of Sri Jayewardenepura  
-[Portfolio](https://your-portfolio-url.com) · [GitHub](https://github.com/your-username) · [LinkedIn](https://linkedin.com/in/your-profile)
-
----
-
 <p align="center">Made with ❤️ for Sri Lanka 🇱🇰</p>
